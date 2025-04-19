@@ -36,13 +36,16 @@ export function LadleMap({ positions, className, onSelectLadle }: LadleMapProps)
         if (position.route) {
           for (const point of position.route) {
             await controls.start(position.id, {
-              left: `${point.x}%`,
-              top: `${point.y}%`,
-              transition: {
-                duration: 2,
-                ease: "easeInOut"
+              animate: {
+                left: `${point.x}%`,
+                top: `${point.y}%`,
+                transition: {
+                  duration: 2,
+                  ease: "easeInOut"
+                }
               }
             });
+await new Promise(resolve => setTimeout(resolve, 100));
           }
         }
       }

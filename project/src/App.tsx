@@ -71,7 +71,7 @@ const initialBlockchainLogs = [
 
 function App() {
   const [energyData, setEnergyData] = useState(initialEnergyData);
-  const [ladlePositions, setLadlePositions] = useState(initialLadlePositions);
+  const [ladlePositions] = useState(initialLadlePositions);
   const [blockchainLogs, setBlockchainLogs] = useState(initialBlockchainLogs);
   const [selectedLadle, setSelectedLadle] = useState<string | null>(null);
 
