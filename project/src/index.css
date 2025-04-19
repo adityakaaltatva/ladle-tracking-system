@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Industry:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-steel-900 text-white font-mono antialiased;
+    background-image: 
+      linear-gradient(to bottom, rgba(26,26,46,0.97), rgba(26,26,46,0.97)),
+      url("https://images.pexels.com/photos/4033324/pexels-photo-4033324.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .industrial-card {
+    @apply relative bg-steel-800/80 rounded-lg overflow-hidden backdrop-blur-sm;
+    @apply before:absolute before:inset-0 before:bg-metal-texture before:opacity-10 before:pointer-events-none;
+    @apply after:absolute after:inset-0 after:bg-scanlines after:pointer-events-none;
+  }
+
+  .glow-border {
+    @apply relative;
+    @apply after:absolute after:inset-0 after:rounded-lg after:border after:border-cooling-500/30;
+    @apply after:shadow-[0_0_15px_rgba(0,194,212,0.2)];
+  }
+
+  .hazard-stripe {
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(255,94,26,0.1),
+      rgba(255,94,26,0.1) 10px,
+      rgba(255,94,26,0.2) 10px,
+      rgba(255,94,26,0.2) 20px
+    );
+  }
+
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 5px currentColor);
+  }
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
